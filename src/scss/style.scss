@@ -1,0 +1,27 @@
+@import './loading';
+@import './layout';
+@import './tables';
+
+body {
+  font-family: sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #0011bb;
+  text-decoration: underline;
+}
+
+a:visited, a:active {
+  color: #6600cc;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.error404 img {
+  width: 100%;
+}

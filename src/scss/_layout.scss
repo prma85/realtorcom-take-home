@@ -1,0 +1,52 @@
+
+.layout {
+  background: #ffffff;
+
+  .layout-header {
+    background: #ededed;
+    padding: 0 10px;
+    height: 64px;
+    line-height: 64px;
+
+    .logo {
+      float: left;
+      clear: left;
+      width: 20%;
+      a {
+        display: block;
+        padding-top: 12px;
+        img {
+          width: 36px;
+          height: auto;
+        }
+      }
+    }
+    .title {
+      float: left;
+      width: 60%;
+      h1 {
+        width: 100%;
+        text-align: center;
+        color: #444444;
+        font-weight: bold;
+        margin: 0;
+      }
+    }
+    .user {
+      width: 20%;
+      float: right;
+      text-align: right;
+      clear: right;
+    }
+  }
+}
+
+.layout-content {
+  max-width: 640px;
+  width: 100%;
+  margin: 20px auto;
+
+  h2 {
+    text-align: center;
+  }
+}
