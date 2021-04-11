@@ -2,6 +2,7 @@ import { useContext } from "react";
 import AppContext from "../AppContext";
 import { convertToSentenceCase } from "../helpers";
 import { Profile } from '../interfaces/database';
+import { Title } from "../components";
 
 const Details = () => {
   const { profile } = useContext(AppContext);
@@ -16,6 +17,7 @@ const Details = () => {
 
   return (
     <div id="view-profile">
+      <Title render={(prev) => `Profile: ${profile.firstName} - ${prev}`} />
       <h2 className="content-title">Profile</h2>
       <table className="profile">
         <caption>{`Details for the ${profile.firstName}`}</caption>

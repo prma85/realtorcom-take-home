@@ -1,14 +1,14 @@
 import { useContext, useState } from "react";
 import AppContext from "../AppContext";
 import { sortBy } from "../helpers";
-import { TableRow, TableTitle, OrderBy } from "../components";
+import { TableRow, TableTitle, OrderBy, Title } from "../components";
 interface Order {
   orderBy: OrderBy;
   asc: boolean;
 }
 
 const Home = () => {
-  const { data } = useContext(AppContext);
+  const { data, site } = useContext(AppContext);
   const { metadata, features } = data;
   const { title } = metadata;
 
@@ -33,6 +33,7 @@ const Home = () => {
 
   return (
     <div id="view-home">
+      <Title render={site.title!} />
       <h2 className="content-title">{title}</h2>
       <table className="list">
         <caption>{`List for the ${title}`}</caption>
