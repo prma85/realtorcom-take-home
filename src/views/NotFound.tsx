@@ -1,4 +1,4 @@
-export default () => (
+const NotFound = () => (
   <div className="error404">
     <img
       alt="Robot with 404 error BG"
@@ -7,3 +7,5 @@ export default () => (
     />
   </div>
 );
+
+export default NotFound;

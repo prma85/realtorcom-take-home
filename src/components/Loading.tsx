@@ -5,7 +5,7 @@ const Loading = () => {
 
   return (
     <div id="loading">
-      <div class="icon">{antIcon}</div>
+      <div className="icon">{antIcon}</div>
       <div style={{ fontSize: 32 }}>Loading...</div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { Feature } from "../interfaces/database";
+import { Feature, Properties } from "../interfaces/database";
 
 export const getMonth = (m: number) => {
   switch (m) {
@@ -26,6 +26,8 @@ export const getMonth = (m: number) => {
       return "Nov";
     case 12:
       return "Dec";
+    default:
+      return 'Invalid Month'
   }
 };
 
@@ -46,12 +48,12 @@ export const convertDateToString = (d: number) => {
   )} ${date.getDate()}, ${date.getFullYear()}, ${strTime}`;
 };
 
-export const sortBy = (by: string, asc: boolean) => (
+export const sortBy = (by: keyof Properties, asc: boolean) => (
   a: Feature,
   b: Feature
 ) => {
-  if (a.properties[by] > b.properties[by]) return asc ? 1 : -1;
-  if (a.properties[by] < b.properties[by]) return asc ? -1 : 1;
+  if (a.properties[by]! > b.properties[by]!) return asc ? 1 : -1;
+  if (a.properties[by]! < b.properties[by]!) return asc ? -1 : 1;
   return 0;
 };
 

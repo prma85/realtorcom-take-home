@@ -3,6 +3,7 @@ import AppContext from "../AppContext";
 import { useParams, Redirect } from "react-router-dom";
 import { capitalizeFirstLetter, convertDateToString } from "../helpers";
 import { Title } from "../components";
+import { Properties } from '../interfaces/database';
 
 const Details = () => {
   const { data } = useContext(AppContext);
@@ -12,7 +13,10 @@ const Details = () => {
 
   if (!item) return <Redirect to="/404" />;
 
-  const propsToShow = [
+  const propsToShow: Array<{
+    prop: keyof Properties,
+    desc?: string
+  }> = [
     { prop: "title" },
     { prop: "mag", desc: "Magnitude" },
     { prop: "time" },

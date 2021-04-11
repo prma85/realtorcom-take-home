@@ -1,10 +1,12 @@
 import { capitalizeFirstLetter } from "../helpers";
 
+export type OrderBy = "title" | "mag" | "time";
+
 interface TableTitleProps {
   desc?: string;
-  title: string;
-  onClick: (v: string) => void;
-  order: (v: string) => string;
+  title: OrderBy;
+  onClick: (v: OrderBy) => void;
+  order: (v: OrderBy) => string;
 }
 
 const TableTitle = ({ desc, title, onClick, order }: TableTitleProps) => (

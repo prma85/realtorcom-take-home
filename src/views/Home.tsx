@@ -1,9 +1,7 @@
 import { useContext, useState } from "react";
 import AppContext from "../AppContext";
 import { sortBy } from "../helpers";
-import { TableRow, TableTitle } from "../components";
-
-type OrderBy = "title" | "mag" | "time";
+import { TableRow, TableTitle, OrderBy } from "../components";
 interface Order {
   orderBy: OrderBy;
   asc: boolean;

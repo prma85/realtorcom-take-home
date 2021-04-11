@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import AppContext from "../AppContext";
-import { convertToSentenceCase, convertDateToString } from "../helpers";
+import { convertToSentenceCase } from "../helpers";
+import { Profile } from '../interfaces/database';
 
 const Details = () => {
   const { profile } = useContext(AppContext);
@@ -22,7 +23,7 @@ const Details = () => {
           {propsToShow.map((p, index) => (
             <tr>
               {index === 0 && (
-                <td className="avatar" rowspan={propsToShow.length}>
+                <td className="avatar" rowSpan={propsToShow.length}>
                   <img
                     width="160"
                     alt={`${profile.firstName}'s avatar`}
@@ -31,7 +32,7 @@ const Details = () => {
                 </td>
               )}
               <td className="bold">{convertToSentenceCase(p.prop)}</td>
-              <td>{profile[p.prop]}</td>
+              <td>{profile[p.prop as keyof Profile]}</td>
             </tr>
           ))}
         </tbody>
