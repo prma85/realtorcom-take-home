@@ -5,7 +5,6 @@ interface TitleProps {
 }
 
 const Title = ({ render }: TitleProps) => {
-  console.log(typeof render);
   if (typeof render === "string") {
     document.title = render;
   } else if (typeof render === "function") {
